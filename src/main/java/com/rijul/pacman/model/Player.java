@@ -39,4 +39,12 @@ public class Player {
 		this.position = position;
 	}
 
+	public PlayerMoveStrategy getStrategy() {
+		return strategy;
+	}
+
+	public void setStrategy(PlayerMoveStrategy strategy) {
+		this.strategy = strategy;
+	}
+
 }
