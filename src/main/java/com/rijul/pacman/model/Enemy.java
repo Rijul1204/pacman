@@ -11,4 +11,22 @@ public class Enemy {
 		super();
 		this.position = position;
 	}
+
+	public Position getPosition() {
+		return position;
+	}
+
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+
+	public EnemyMoveStrategy getStrategy() {
+		return strategy;
+	}
+
+	public void setStrategy(EnemyMoveStrategy strategy) {
+		this.strategy = strategy;
+	}
+	
+	
 }

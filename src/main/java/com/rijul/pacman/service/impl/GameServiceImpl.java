@@ -2,6 +2,7 @@ package com.rijul.pacman.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,7 +14,7 @@ import com.rijul.pacman.service.*;
 public class GameServiceImpl implements GameService {
 
 	@Autowired
-	private MovementService movementService;
+	private MovementApplyService movementService;
 	@Autowired
 	private BoardService boardService;
 	@Autowired
@@ -53,9 +54,18 @@ public class GameServiceImpl implements GameService {
 	}
 
 	private void refresh() {
-		
+
 		displayService.displayGame(gameData);
+
+		Player player = this.gameData.getPlayer();
+		Move playerMove = player.getStrategy().getMove(gameData, player);
+
+		List<Move> enemyMoves = this.gameData.getEnemies().stream()
+				.map(enemy -> enemy.getStrategy().getMove(this.gameData, enemy))
+				.collect(Collectors.toList());
 		
+		
+
 	}
 
 }
