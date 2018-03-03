@@ -1,30 +1,14 @@
 package com.rijul.pacman.model;
 
+import com.rijul.pacman.service.EnemyMoveStrategy;
+
 public class Enemy {
 
-	private Point position;
-	private Direction direction;
+	private Position position;
+	private EnemyMoveStrategy strategy;
 
-	public Enemy(Point point, Direction direction) {
+	public Enemy(Position position) {
 		super();
-		this.position = point;
-		this.direction = direction;
-	}
-
-	public Point getPosition() {
-		return position;
-	}
-
-	public void setPosition(Point position) {
 		this.position = position;
 	}
-
-	public Direction getDirection() {
-		return direction;
-	}
-
-	public void setDirection(Direction direction) {
-		this.direction = direction;
-	}
-
 }

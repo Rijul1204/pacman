@@ -1,18 +1,18 @@
 package com.rijul.pacman.model;
 
+import com.rijul.pacman.service.PlayerMoveStrategy;
+
 public class Player {
 
 	private String name;
 	private int score;
-	private Direction direction;
-	private Point position;
+	private Position position;
+	private PlayerMoveStrategy strategy;
 
-	public Player(String name, int score, Direction direction, Point position) {
+	public Player(String name, int score) {
 		super();
 		this.name = name;
 		this.score = score;
-		this.direction = direction;
-		this.position = position;
 	}
 
 	public String getName() {
@@ -31,19 +31,11 @@ public class Player {
 		this.score = score;
 	}
 
-	public Direction getDirection() {
-		return direction;
-	}
-
-	public void setDirection(Direction direction) {
-		this.direction = direction;
-	}
-
-	public Point getPosition() {
+	public Position getPosition() {
 		return position;
 	}
 
-	public void setPosition(Point position) {
+	public void setPosition(Position position) {
 		this.position = position;
 	}
 
